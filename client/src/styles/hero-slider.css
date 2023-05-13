@@ -1,0 +1,84 @@
+.slider__item {
+  max-width: 100%;
+  height: 650px;
+}
+
+.slider__item-01 {
+  background: linear-gradient(#094057ee, #eb9a2953),
+    url("../assets/all-images/slider-img/bannier1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slider__item-02 {
+  background: linear-gradient(#093F57c8, #eb9a294b),
+    url("../assets/all-images/slider-img/bannier2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slider__item-03 {
+  background: linear-gradient(#093F57c8, #eb9a2960),
+    url("../assets/all-images/slider-img/bannier4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero__slider {
+  overflow: hidden;
+}
+
+.slider__content {
+  padding-top: 150px;
+}
+
+.slider__content h1 {
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+
+.reserve__btn {
+  background: #fff !important;
+  color: #0A4660 !important;
+  border: none;
+  outline: none;
+}
+
+.reserve__btn a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #0A4660;
+}
+
+.reserve__btn:hover {
+  background: #0A4660;
+  color: #fff;
+}
+
+@media only screen and (max-width: 992px) {
+  .slider__item {
+    height: 530px;
+    max-width: 100vw;
+  }
+
+  .slider__content {
+    margin-top: -50px;
+  }
+
+  .slider__content h1 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .slider__item {
+    height: 450px;
+  }
+
+  .slider__content h1 {
+    font-size: 1.5rem;
+  }
+}
