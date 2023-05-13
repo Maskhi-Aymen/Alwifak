@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bc512441.css",
+    "main.js": "/static/js/main.633d0209.js",
+    "static/media/remixicon.svg?t=1590207869815": "/static/media/remixicon.9cedd2150922ead84869.svg",
+    "static/media/remixicon.eot?t=1590207869815": "/static/media/remixicon.5cb99e6cba5a4619063f.eot",
+    "static/media/remixicon.ttf?t=1590207869815": "/static/media/remixicon.f2616f597cf98f38d234.ttf",
+    "static/media/ava-1.jpg": "/static/media/ava-1.c185d7723fe40ec46830.jpg",
+    "static/media/ava-3.jpg": "/static/media/ava-3.1442075049ece43143f2.jpg",
+    "static/media/ava-2.jpg": "/static/media/ava-2.11e918c656d0c7851624.jpg",
+    "static/media/ava-4.jpg": "/static/media/ava-4.5f15524f7b3f80a834df.jpg",
+    "static/media/remixicon.woff?t=1590207869815": "/static/media/remixicon.8d09fa11700ed63cf96e.woff",
+    "static/media/Alwifak.png": "/static/media/Alwifak.e973566e61aaa3f36922.png",
+    "static/media/hi10.jpg": "/static/media/hi10.2aa9c865eb656e3c6c5e.jpg",
+    "static/media/bmw-offer.png": "/static/media/bmw-offer.ecfb9ac1bf7b5ef615a6.png",
+    "static/media/bannier4.jpg": "/static/media/bannier4.d17013200c486ee8a6ec.jpg",
+    "static/media/bannier1.jpg": "/static/media/bannier1.e4ec84a46dae47457408.jpg",
+    "static/media/Alwifak-blanc.png": "/static/media/Alwifak-blanc.508f7f2d68f32ca86be0.png",
+    "static/media/remixicon.woff2?t=1590207869815": "/static/media/remixicon.90668f6f9b3c2c18a090.woff2",
+    "static/media/nissan-offer.png": "/static/media/nissan-offer.6eddc86310b7cac538ae.png",
+    "static/media/toyota-offer-2.png": "/static/media/toyota-offer-2.861de085d1c782df9e9d.png",
+    "static/media/drive.jpg": "/static/media/drive.b72e6f2d1ccdbd6550a9.jpg",
+    "static/media/bannier2.jpg": "/static/media/bannier2.0c419ebade897f9f4b4c.jpg",
+    "static/media/polosedan.jpg": "/static/media/polosedan.d212cce48af4195de83f.jpg",
+    "static/media/seat.jpg": "/static/media/seat.c74eb0d43e82433bac7a.jpg",
+    "static/media/scoda.jpg": "/static/media/scoda.a627eaa2f0f6409d3428.jpg",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.bc512441.css.map": "/static/css/main.bc512441.css.map",
+    "main.633d0209.js.map": "/static/js/main.633d0209.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc512441.css",
+    "static/js/main.633d0209.js"
+  ]
+}
