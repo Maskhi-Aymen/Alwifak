@@ -31,7 +31,7 @@ const NewCar= () => {
     setisvalid(true)  
     let formData= new FormData();
     formData.append("img",image);
-    formData.append("image",process.env.BACKEND_IMAGE+"/uploads/"+image.name);
+    formData.append("image","https://54.37.11.213:3000/uploads/"+image.name);
     formData.append("carName",carName);
     formData.append("automatic",automatic);
     formData.append("model",model);

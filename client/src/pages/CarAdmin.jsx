@@ -38,7 +38,7 @@ const CarAdmin = () => {
       let formData = new FormData();
       setisvalid(true)
       formData.append("img", image);
-      if (image && image.name ) {       formData.append("image", process.env.BACKEND_IMAGE+"/uploads/" + image.name);    }
+      if (image && image.name ) {       formData.append("image", "https://54.37.11.213:3000/uploads/" + image.name);    }
       else { formData.append("image", singleCarItem.image) }
       formData.append("carName", carName);
       formData.append("automatic", automatic);
