@@ -235,7 +235,7 @@ userRouter.post("/reserve", async (req, res) => {
     res.send('Email sent!')
 });
 
-rentRouter.post("/prerent", async (req, res) => {
+userRouter.post("/prerent", async (req, res) => {
   const { name, lastname, email, numtel, lieuprise, dateprise, timeprise, lieureprise, datereprise, timereprise, nombrepers, nombrebag, payment, autre, carName, brand, prix, id } = req.body;
   // create reusable transporter object using the default SMTP transport
   const date1 = moment(new Date(dateprise));
