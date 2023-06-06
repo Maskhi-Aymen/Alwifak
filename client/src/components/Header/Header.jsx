@@ -140,11 +140,11 @@ const Header = () => {
                 {userInfo ? (
                     <span onClick={logoutHandler} style={{color:'white'}}>Déconnexion</span>
                 ) : (<>
-                      <Link to="/login" className=" d-flex align-items-center gap-1 mr-3">
+                      <Link to="/login" className=" d-flex align-items-center gap-1 mr-3" style={{textDecoration:'none'}}>
                   <i class="ri-login-circle-line"></i> Connecter
                 </Link>
 
-                <Link to="/register" className=" d-flex align-items-center gap-1">
+                <Link to="/register" className=" d-flex align-items-center gap-1" style={{textDecoration:'none'}}>
                   <i class="ri-user-line"></i> S'inscrire
                 </Link></>
                 )}

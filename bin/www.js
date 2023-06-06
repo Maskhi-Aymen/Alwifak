@@ -69,6 +69,7 @@
        process.exit(1);
        break;
      case 'EADDRINUSE':
+      console.error(error);
        console.error(bind + ' is already in use');
        process.exit(1);
        break;

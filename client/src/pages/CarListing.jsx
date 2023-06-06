@@ -15,7 +15,7 @@ const CarListing = () => {
      
        
      try {
-       const result = await axios.get(`/api/cars/getall`);
+       const result = await axios.get(process.env.REACT_APP_API_URL+`/cars/getall`);
        setCarData(result.data)
      } catch(err) {
        console.log("Error!");

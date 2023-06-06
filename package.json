@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node server.js",
     "start:dev": "nodemon ./bin/www",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run start:dev\" \"npm run client\""
@@ -17,6 +17,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "moment": "^2.29.4",
     "mongoose": "^6.5.1",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.7.8",

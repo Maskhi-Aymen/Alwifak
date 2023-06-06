@@ -18,7 +18,7 @@ const Login = () => {
 
     try {
 
-      const { data } = await axios.post("/api/users/login", {
+      const { data } = await axios.post(process.env.REACT_APP_API_URL+"/users/login", {
         username,
         password
       }, {
@@ -63,7 +63,7 @@ const Login = () => {
                 <button className=" btn comment__btn mt-3" >Connecter</button>
               </FormGroup>
               <FormGroup >
-                <p>Vous n’avez pas de compte? <a href="/register" className='form-link'>s’inscrire</a></p>
+                <p>Vous n’avez pas de compte? <a href="/register" className='form-link'style={{textDecoration:'none',color:'#ea9a29'}} >s’inscrire</a></p>
               </FormGroup>
             </Form>
           </Card>

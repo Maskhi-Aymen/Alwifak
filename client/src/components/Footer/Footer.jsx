@@ -63,7 +63,7 @@ const Footer = () => {
             <div className="mb-4">
               <h5 className="footer__link-title mb-4">Siège social</h5>
               <p className="office__info"><BiMap/>18, 1001 Rue Fares El Khouri, Tunis</p>
-              <p className="office__info"><BiMobile/> +216 25 214 025</p>
+              <p className="office__info"><BiMobile/> +216 29 060 530</p>
 
               <p className="office__info"><BiEnvelope/> contact@alwifakrentacar.com</p>
 

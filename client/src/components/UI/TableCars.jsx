@@ -31,7 +31,7 @@ export default function TableCars() {
       
         
       try {
-        const result = await axios.get(`/api/cars/getall`);
+        const result = await axios.get(process.env.REACT_APP_API_URL+`/cars/getall`);
         setCarData(result.data)
         console.log(result.data)
 
@@ -51,7 +51,7 @@ export default function TableCars() {
 
 
     try {
-      const { data } = await axios.delete(`/api/cars/car/${userId}/${id}`, {
+      const { data } = await axios.delete(process.env.REACT_APP_API_URL+`/cars/car/${userId}/${id}`, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": "Bearer "
@@ -89,10 +89,10 @@ export default function TableCars() {
                 Model
               </th>
               <th>
-                Prix par jour
+                Immatriculation
               </th>
               <th>
-                Capacité
+                Prix par jour
               </th>
               <th>
                 Action
@@ -113,10 +113,10 @@ export default function TableCars() {
                     {item.model}
                   </td>
                   <td>
-                    {item.payPerDay}
+                    {item.matricule}
                   </td>
                   <td>
-                    {item.capacity}
+                    {item.payPerDay}
                   </td>
                   <td>
                     <Link to={`/admin/cars/${item._id}`} style={{ fontSize: "20px", textDecoration: "none", color: "#E80000", marginLeft: "10px" }} id='modify'>

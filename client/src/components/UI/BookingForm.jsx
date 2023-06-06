@@ -8,7 +8,7 @@ import masterCard from "../../assets/all-images/master-card.jpg";
 import paypal from "../../assets/all-images/paypal.jpg";
 import "../../styles/payment-method.css";
 
-const BookingForm = ({ carName,brand }) => {
+const BookingForm = ({ carName,brand,prix ,id}) => {
 
   const [name, setname] = useState();
   const [lastname, setlastname] = useState();
@@ -16,13 +16,13 @@ const BookingForm = ({ carName,brand }) => {
   const [dateprise, setdateprise] = useState();
   const [datereprise, setdatereprise] = useState();
   const [numtel, setnumtel] = useState();
-  const [lieuprise, setlieuprise] = useState();
-  const [lieureprise, setlieureprise] = useState();
+  const [lieuprise, setlieuprise] = useState("Agence Alwifak Tunis");
+  const [lieureprise, setlieureprise] = useState("Agence Alwifak Tunis");
   const [timeprise, settimeprise] = useState();
   const [timereprise, settimereprise] = useState();
   const [nombrepers, setnombrepers] = useState("1 person");
   const [nombrebag, setnombrebag] = useState("1 Bagage");
-  const [autre, setautre] = useState();
+  const [autre, setautre] = useState("");
   const [payment, setpayment] = useState();
 
   const [isvalid, setisvalid] = useState(true);
@@ -33,21 +33,18 @@ const BookingForm = ({ carName,brand }) => {
     event.preventDefault();
     const data = { name, lastname, dateprise, timeprise, autre, payment, nombrebag, nombrepers };
     if (name && lastname && email && dateprise && datereprise && numtel && lieuprise && lieureprise && timeprise && timereprise && payment) {
-      if (!autre){autre=""}
       try {
-
-        await axios.post("/api/users/reserve", {
+        setisvalid(true);
+        toggle();
+        await axios.post(process.env.REACT_APP_API_URL+"/rent/prerent", {
           name,lastname,email,numtel,lieuprise,dateprise,timeprise,lieureprise,datereprise,timereprise,
-          nombrepers,nombrebag,payment,autre,carName,brand
+          nombrepers,nombrebag,payment,autre,carName,brand,prix,id
         },{
           headers: {
             "Content-Type": "application/json",
             "Authorization": "Bearer "
           }
         });
-     setisvalid(true);
-      toggle();
-
 
     } catch(error) {
       console.log(error);
@@ -65,36 +62,50 @@ const BookingForm = ({ carName,brand }) => {
           <div className="booking-info mt-5">
             <h5 className="mb-4 fw-bold ">Informations de Réservation</h5>
             <FormGroup className="booking__form d-inline-block me-4 mb-4">
-              <input type="text" onChange={(e) => setname(e.target.value)} placeholder="Nom" required />
+              <label>Nom :</label>
+              <input type="text" onChange={(e) => setname(e.target.value)} placeholder="taper votre nom" required />
             </FormGroup>
             <FormGroup className="booking__form d-inline-block ms-1 mb-4">
-              <input type="text" onChange={(e) => setlastname(e.target.value)} placeholder="Prénom" required />
+            <label>Prénom :</label>
+              <input type="text" onChange={(e) => setlastname(e.target.value)} placeholder=" taper votre prénom" required />
             </FormGroup>
 
             <FormGroup className="booking__form d-inline-block me-4 mb-4">
-              <input type="email" onChange={(e) => setemail(e.target.value)} placeholder="E-mail" required />
+            <label>E-mail :</label>
+              <input type="email" onChange={(e) => setemail(e.target.value)} placeholder="taper votre adresse E-mail" required />
             </FormGroup>
             <FormGroup className="booking__form d-inline-block ms-1 mb-4">
-              <input type="number" onChange={(e) => setnumtel(e.target.value)} placeholder="Numéro de téléphone" required />
+            <label>Numéro de téléphone :</label>
+              <input type="number" onChange={(e) => setnumtel(e.target.value)} placeholder="taper votre Numéro de téléphone" required />
             </FormGroup>
 
             <FormGroup className="booking__form d-inline-block me-4 mb-4">
-              <input type="text" onChange={(e) => setlieuprise(e.target.value)} placeholder="Lieu de prise en charge" required />
+              <label>Lieu de prise en charge :</label>
+              <select onChange={(e) => setlieuprise(e.target.value)} name="" id=""required>
+                <option value="Agence Alwifak Tunis" selected>Agence Alwifak Tunis</option>
+                <option value="Tunis-Cartage Airport">Tunis-Cartage Airport</option>
+              </select>
             </FormGroup>
             <FormGroup className="booking__form d-inline-block ms-1 mb-4">
-              <input type="text" onChange={(e) => setlieureprise(e.target.value)} placeholder="Lieu de restitution" required />
+              <label>Lieu de restitution :</label>
+              <select onChange={(e) => setlieureprise(e.target.value)} name="" id=""required>
+              <option value="Agence Alwifak Tunis" selected>Agence Alwifak Tunis</option>
+              <option value="Tunis-Cartage Airport">Tunis-Cartage Airport</option>
+              </select>
             </FormGroup>
 
             <FormGroup className="booking__form d-inline-block me-4 mb-4">
+            <label>Nombre de personne :</label>
               <select onChange={(e) => setnombrepers(e.target.value)} name="" id="">
                 <option value="1 person" selected>1 Person</option>
                 <option value="2 person">2 Person</option>
                 <option value="3 person">3 Person</option>
                 <option value="4 person">4 Person</option>
-                <option value="5+ person">5+ Person</option>
+                <option value="5+ person">5 Person</option>
               </select>
             </FormGroup>
             <FormGroup className="booking__form d-inline-block ms-1 mb-4">
+            <label>Nombre de bagage :</label>
               <select onChange={(e) => setnombrebag(e.target.value)} name="" id="">
                 <option value="1 Bagage" selected>1 Bagage</option>
                 <option value="2 Bagage">2 Bagage</option>
@@ -105,6 +116,7 @@ const BookingForm = ({ carName,brand }) => {
             </FormGroup>
 
             <FormGroup className="booking__form d-inline-block me-4 mb-4">
+            <label>Date de prise en charge :</label>
               <input type="date" onChange={(e) => setdateprise(e.target.value)} placeholder="Journey Date" required />
             </FormGroup>
             <FormGroup className="booking__form d-inline-block ms-1 mb-4">
@@ -116,6 +128,7 @@ const BookingForm = ({ carName,brand }) => {
               />
             </FormGroup>
             <FormGroup className="booking__form d-inline-block me-4 mb-4">
+            <label>Date de restitution :</label>
               <input type="date" onChange={(e) => setdatereprise(e.target.value)} placeholder="Journey Date" required />
             </FormGroup>
             <FormGroup className="booking__form d-inline-block ms-1 mb-4">
@@ -128,12 +141,13 @@ const BookingForm = ({ carName,brand }) => {
             </FormGroup>
 
             <FormGroup>
+            <label>Autre information :</label>
               <textarea
                 rows={5}
                 type="textarea"
                 onChange={(e) => setautre(e.target.value)}
                 className="textarea"
-                placeholder="Autre information"
+                placeholder="..."
               ></textarea>
             </FormGroup>
           </div>

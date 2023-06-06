@@ -67,10 +67,19 @@ section {
   padding: 50px 0px;
 }
 
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 .btn {
   padding: 7px 15px;
-  background: #094057;
-  color: #fff;
+  background: #094057!important;
+  color: #fff!important;
   border: none;
   outline: none;
   border-radius: 5px;
@@ -99,7 +108,7 @@ section {
 
 .curved-div {
   position: relative;
-  background: linear-gradient(#ffffff, #eb9a29e3);
+  /* background: linear-gradient(#ffffff, #eb9a29e3); */
   text-align: center;
 
 }

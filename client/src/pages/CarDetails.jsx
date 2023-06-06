@@ -1,6 +1,6 @@
 import React, { useEffect,useState ,useRef} from "react";
 import axios from "axios";
-import carData from "../assets/data/carData";
+import '../styles/CarDetails.css';
 import { Container, Row, Col } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
 import { useParams } from "react-router-dom";
@@ -9,6 +9,7 @@ import PaymentMethod from "../components/UI/PaymentMethod";
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import interactionPlugin from "@fullcalendar/interaction" ;
+import frLocale from '@fullcalendar/core/locales/fr';
 
 const CarDetails = () => {
   const { slug } = useParams();
@@ -27,7 +28,9 @@ const CarDetails = () => {
   const [capacity, setcapacity] = useState("");
   const [description, setDescp] = useState("");
   const [rents, setRents] = useState([]);
-  const [events, setevents] = useState([])
+  const [events, setevents] = useState([]);
+  const [id, setId] = useState("");
+
 
   const userId = JSON.parse(localStorage.getItem("userInfo")) ? JSON.parse(localStorage.getItem("userInfo"))._id:null;
 
@@ -38,9 +41,10 @@ const CarDetails = () => {
     const fetchData = async () => {
 
       try {
-        const result = await axios.get(`/api/cars/car/${slug}`);
+        const result = await axios.get(process.env.REACT_APP_API_URL+`/cars/car/${slug}`);
         setSingle(result.data)
         setcarName(result.data.carName);
+        setId(result.data._id);
         setbrand(result.data.brand);
         setModel(result.data.model);
         setDescp(result.data.description);
@@ -56,11 +60,10 @@ const CarDetails = () => {
         
       for (let i = 0; i < result.data.rents.length; i++) {
         let tt={}
-         tt["title"]= "Réserer!"
+         tt["title"]= "Réserver!";
          tt["start"]= result.data.rents[i].start
          tt["end"]=  result.data.rents[i].end
-         tt["color"]="red"
-         tt["classNames"]="test"
+         tt["color"]="#0A4660"
          tt["overlap"]=false
          lis.push(tt)
       }
@@ -152,10 +155,10 @@ const CarDetails = () => {
 
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
-                      class="ri-wheelchair-line"
+                      class="ri-flashlight-line"
                       style={{ color: "#f9a826" }}
                     ></i>{" "}
-                    singleCarItem.seatType
+                    +80 CH
                   </span>
 
                   <span className=" d-flex align-items-center gap-1 section__description">
@@ -169,6 +172,7 @@ const CarDetails = () => {
               </div>
               </Col>
               <Col lg="6" className="mt-5">
+              <div className="custom-calendar">
               <FullCalendar
                 ref={calendarRef}
                 headerToolbar= {{
@@ -179,10 +183,12 @@ const CarDetails = () => {
                 events={events}
                 plugins={[dayGridPlugin,interactionPlugin]}
                 initialView='dayGridMonth'
+                locale={frLocale}
 
-              /></Col>
+              /></div>
+              </Col>
               <Col lg="6">
-                <BookingForm carName={carName} brand={brand}/></Col>
+                <BookingForm carName={carName} brand={brand} prix ={payPerDay} id={id}/></Col>
           </Row>
         </Container>
       </section>

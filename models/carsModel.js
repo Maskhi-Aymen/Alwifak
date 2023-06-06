@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 
 const carsSchema = new mongoose.Schema({
     carName: {type: String, required: true},
+    matricule: {type: String},
     brand: {type: String, required: true},
     image: {type: String, required: true},
     payPerDay: {type: String, required: true},
@@ -16,7 +17,8 @@ const carsSchema = new mongoose.Schema({
             start: {type: String},
             end: {type: String}, 
             title: {type: String},
-            tel: {type: String},color: {type:String,default:'#ff9f89'}
+            tel: {type: String},
+            color: {type:String,default:'#0a4660'}
 /*            overlap:{type:Boolean,default:false},
             display: {type:String,default:'background'},
         */

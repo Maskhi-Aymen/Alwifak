@@ -1,0 +1,61 @@
+.fc-col-header-cell-cushion {
+  color: #0a4660;
+}
+
+  
+  .fc-view{
+    background-color: #ffffff;
+    color:#a46206;
+    width: 100%;
+    height: 100%;
+    overflow-y:inherit;
+  }
+
+  .custom-calendar{
+    height: 110%;
+    overflow-x:hidden;
+  }
+
+  .fc-daygrid-day-top  {
+  background-color: #0a46600a; 
+}
+
+
+
+
+.fc-daygrid-today {
+  background-color: #FF0000;
+}
+.fc-daygrid-day.fc-day-today {
+  background-color: #EB9929  !important;
+  color: #FFFFFF !important;
+}
+
+
+.fc-daygrid-day  .fc-day-today
+{
+  background-color: #0a4660; 
+}
+
+.fc-daygrid-day-number {
+  color: #0A4660; 
+}
+.fc-daygrid-header .fc-day-today {
+  background-color: #a01e1e;
+  color: #000000;
+  font-weight: bold;
+}
+
+.fc-daygrid-day-top {
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.fc-daygrid-day {
+  text-align: center;
+}
+
+.fc-daygrid-day-number {
+  font-size: 14px;
+}
+
+

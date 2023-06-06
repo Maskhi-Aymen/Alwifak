@@ -10,7 +10,7 @@ const HeroSlider = () => {
   const settings = {
     fade: true,
     speed: 2000,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     infinite: true,
     autoplay: true,
     slidesToShow: 1,
@@ -22,8 +22,8 @@ const HeroSlider = () => {
       <div className="slider__item slider__item-01 mt0">
         <Container><center>
           <div className="slider__content ">
-            <h4 className="text-light mb-3">À partir de 70 DT/jour </h4>
-            <h1 className="text-light mb-4">Réservez votre voiture chez Al Wifak Rent Car pour location longue ou courte durée.</h1>
+            <h1 className="text-light mb-3" style={{fontSize:"120px",fontFamily:"Lato, Helvetica, sans-serif"}}>Al Wifak </h1>
+            <h3 className="text-light mb-4" style={{fontFamily:"Lato, Helvetica, sans-serif"}}>Réservez dès maintenant chez Al Wifak Rent Car et bénéficiez d'une expérience de location de voiture exceptionnelle avec des options adaptées à toutes les occasions.</h3>
           </div></center>
         </Container>
       </div>
@@ -31,8 +31,8 @@ const HeroSlider = () => {
       <div className="slider__item slider__item-02 mt0">
         <Container><center>
           <div className="slider__content ">
-            <h4 className="text-light mb-3">Ai Wifek vous propose des prix plus que promotionnels</h4>
-            <h1 className="text-light mb-4">Réservez votre voiture chez Al Wifak Rent Car pour location longue ou courte durée.</h1>
+            <h1 className="text-light mb-3" style={{fontSize:"120px",fontFamily:"Lato, Helvetica, sans-serif"}}>Al Wifak</h1>
+            <h3 className="text-light mb-4" style={{fontFamily:"Lato, Helvetica, sans-serif"}}>Découvrez notre sélection de véhicules et réservez dès maintenant chez Al Wifak Rent Car pour une location longue ou courte durée</h3>
           </div></center>
         </Container>
       </div>
@@ -40,8 +40,8 @@ const HeroSlider = () => {
       <div className="slider__item slider__item-03 mt0">
         <Container><center>
           <div className="slider__content ">
-                   <h4 className="text-light mb-3">Reservation simple & rapide</h4>     
-            <h1 className="text-light mb-4">Meilleur Voiture à bas prix</h1>
+                   <h1 className="text-light mb-3" style={{fontSize:"120px",fontFamily:"Lato, Helvetica, sans-serif"}}>Al Wifak</h1>     
+            <h3 className="text-light mb-4" style={{fontFamily:"Lato, Helvetica, sans-serif"}}>Voyagez avec style et confort en louant votre voiture chez Al Wifak Rent Car <br/> votre partenaire de confiance pour des locations flexibles et abordables</h3>
           </div></center>
         </Container>
       </div>

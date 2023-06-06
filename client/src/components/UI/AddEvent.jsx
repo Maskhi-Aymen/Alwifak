@@ -19,7 +19,7 @@ const AddEvent = ({ modelopen, handleModel, date}) => {
     e.preventDefault();
     if (start&&end&&title&&tel) {
       try {
-        const { data } = await axios.post(`/api/cars/rent/${userId}/${slug}`, {start:dayjs(start).format("YYYY-MM-DD")+" "+timestart+":00",end:dayjs(end).format("YYYY-MM-DD")+" "+timeEnd+":00",
+        const { data } = await axios.post(process.env.REACT_APP_API_URL+`/cars/rent/${userId}/${slug}`, {start:dayjs(start).format("YYYY-MM-DD")+" "+timestart+":00",end:dayjs(end).format("YYYY-MM-DD")+" "+timeEnd+":00",
         title,tel}, {
           headers: {
             "Content-Type": "application/json",

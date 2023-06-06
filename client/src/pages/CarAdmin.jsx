@@ -8,6 +8,7 @@ import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import interactionPlugin from "@fullcalendar/interaction" ;// needed for dayClick
 import AddEvent from "../components/UI/AddEvent";
 import InfoEvent from "../components/UI/InfoEvent";
+import frLocale from '@fullcalendar/core/locales/fr';
 
 
 const CarAdmin = () => {
@@ -20,6 +21,7 @@ const CarAdmin = () => {
   const [automatic, setautomatic] = useState("Automatique");
   const [carName, setcarName] = useState("");
   const [model, setModel] = useState("");
+  const [matricule, setMatricule] = useState("");
   const [brand, setbrand] = useState("");
   const [image, setImg] = useState();
   const [payPerDay, setpayPerDay] = useState("");
@@ -36,11 +38,12 @@ const CarAdmin = () => {
       let formData = new FormData();
       setisvalid(true)
       formData.append("img", image);
-      if (image) { formData.append("image", "http://localhost:3000/uploads/" + image.name); }
+      if (image && image.name ) {       formData.append("image", process.env.BACKEND_IMAGE+"/uploads/" + image.name);    }
       else { formData.append("image", singleCarItem.image) }
       formData.append("carName", carName);
       formData.append("automatic", automatic);
       formData.append("model", model);
+      formData.append("matricule", matricule);
       formData.append("brand", brand);
       formData.append("payPerDay", payPerDay);
       formData.append("speed", speed);
@@ -48,7 +51,7 @@ const CarAdmin = () => {
       formData.append("description", description);
 
       try {
-        const { data } = await axios.put(`/api/cars/car/${userId}/${singleCarItem._id}`, formData, {
+        const { data } = await axios.put(process.env.REACT_APP_API_URL+`/cars/car/${userId}/${singleCarItem._id}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             "Authorization": "Bearer "
@@ -86,11 +89,12 @@ const CarAdmin = () => {
     const fetchData = async () => {
 
       try {
-        const result = await axios.get(`/api/cars/car/${slug}`);
+        const result = await axios.get(process.env.REACT_APP_API_URL+`/cars/car/${slug}`);
         setSingle(result.data)
         setcarName(result.data.carName);
         setbrand(result.data.brand);
         setModel(result.data.model);
+        setMatricule(result.data.matricule);
         setDescp(result.data.description);
         setcapacity(result.data.capacity);
         setpayPerDay(result.data.payPerDay);
@@ -158,6 +162,9 @@ const CarAdmin = () => {
 
                   <h6 className=" rent__price fw-bold fs-4">
                     Modele :<Input defaultValue={model} onChange={(e) => setModel(e.target.value)} />
+                  </h6>
+                  <h6 className=" rent__price fw-bold fs-4">
+                    Matricule :<Input defaultValue={matricule} onChange={(e) => setMatricule(e.target.value)} />
                   </h6>
                 </div>
 
@@ -230,6 +237,8 @@ const CarAdmin = () => {
                 dateClick={dateClick}
                 datesSet={(date) => handleDatesSet(date)}
                 eventClick={(arg) => handleDateClick(arg)}
+                locale={frLocale}
+
               />
 
             </Col>
@@ -240,7 +249,7 @@ const CarAdmin = () => {
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Modifier la formation</ModalHeader>
         <ModalBody>{isvalid ? <> <h2>Succés</h2>
-          La formation a été modifiée avec succès
+        Les modifications des informations ont été effectuées avec succès
         </>
           :
           <>Les données que vous avez saisi(e) n’est pas complet.S'il vous plaît, essayez de les compléter !</>}

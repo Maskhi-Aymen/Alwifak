@@ -8,8 +8,7 @@ import FindCarForm from "../components/UI/FindCarForm";
 import AboutSection from "../components/UI/AboutSection";
 import ServicesList from "../components/UI/ServicesList";
 import CarItem from "../components/UI/CarItem";
-import Testimonial from "../components/UI/Testimonial";
-
+import logo from '../assets/all-images/Alwifak-blanc.png'
 
 
 const Home = () => {
@@ -21,7 +20,7 @@ const Home = () => {
      
        
      try {
-       const result = await axios.get(`/api/cars/getall`);
+       const result = await axios.get(process.env.REACT_APP_API_URL+`/cars/getall`);
        setCarData(result.data)
      } catch(err) {
        console.log("Error!");
@@ -40,8 +39,9 @@ const Home = () => {
           <Container>
             <Row className="form__row">
               <Col lg="4" md="4">
-                <div className="find__cars-left" style={{borderRadius:"5%"}}>
-                  <h3>Nous ferons de vous le véhicule parfait pour votre voyage</h3>
+                <div className="find__cars-left" style={{borderRadius:"5%",height:"100%"}}>
+                  <center><img src={logo} style={{width:'335px'}}/>
+                  <h3 style={{color:'white'}}>Réservez dès maintenant chez Al Wifak Rent Car</h3></center>
                 </div>
               </Col>
 
@@ -84,7 +84,8 @@ const Home = () => {
             ))}
           </Row>
         </Container>
-      </section> <svg viewBox="0 0 1440 319">
+      </section> 
+      <svg viewBox="0 0 1440 319">
    <path fill="#093F57" fill-opacity="1" d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
  </svg>
 </div>

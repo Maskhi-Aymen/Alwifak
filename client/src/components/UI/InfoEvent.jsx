@@ -14,7 +14,7 @@ const InfoEvent = ({ modelopen, handleModel, date,event}) => {
     e.preventDefault();
     
       try {
-       const { data } = await axios.delete(`/api/cars/rent/${userId}/${slug}/${id}`);
+       const { data } = await axios.delete(process.env.REACT_APP_API_URL+`/cars/rent/${userId}/${slug}/${id}`);
         console.log(data)
         window.location.reload(true);
        

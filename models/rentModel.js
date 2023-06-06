@@ -3,16 +3,16 @@ import mongoose from 'mongoose'
 
 const rentSchema = new mongoose.Schema({
 
+    name : {type : String} ,
+    lastname: {type : String} ,
+    email: {type : String} ,
+    numtel: {type : String} ,
     car : {type : mongoose.Schema.Types.ObjectID , ref:'cars'},
-    user : {type : mongoose.Schema.Types.ObjectID , ref:'users'},
-    bookedTimeSlots : {
-        from : {type : String} ,
-        to : {type : String}
-    } ,
-    totalDays : {type : Number},
-    total : {type : Number},
-    driverRequired : {type : Boolean}
-
+    start:{type : String} ,
+    end:{type : String} ,
+    totalDays : {type : String},
+    totalPay : {type : String},
+    payment:{type : String} ,
 }, {
     timestamps: true
 });

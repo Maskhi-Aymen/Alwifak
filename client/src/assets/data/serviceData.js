@@ -4,14 +4,14 @@ const serviceData = [
     id: 3,
     title: "Les meilleures offres de voitures",
     icon: "ri-roadster-line",
-    desc: "Consultez les offres d’agences de location dans plus de 70 000 emplacements.",
+    desc: "Chez Al Wifak Rent Car, nous mettons à votre disposition une flotte de véhicules modernes et bien entretenus, pour que votre voyage soit confortable et sécurisé.",
   },
 
   {
     id: 4,
     title: "Les meilleures Prix",
     icon: "ri-timer-flash-line",
-    desc: "vous assure un gain de dépenses très important.",
+    desc: "Louez une voiture chez Al Wifak Rent Car et profitez d'un service professionnel, d'un large choix de véhicules et de tarifs compétitifs - votre satisfaction est notre priorité.",
   },
 
   {
