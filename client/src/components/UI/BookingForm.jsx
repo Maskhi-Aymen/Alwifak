@@ -36,7 +36,7 @@ const BookingForm = ({ carName,brand,prix ,id}) => {
       try {
         setisvalid(true);
         toggle();
-        await axios.post("/api/rent/prerent", {
+        await axios.post("/api/users/prerent", {
           name,lastname,email,numtel,lieuprise,dateprise,timeprise,lieureprise,datereprise,timereprise,
           nombrepers,nombrebag,payment,autre,carName,brand,prix,id
         },{
