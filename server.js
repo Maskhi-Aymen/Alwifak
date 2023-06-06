@@ -10,6 +10,8 @@ import categoryRouter from './routes/typeRoute.js';
 import cors from 'cors'; 
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
+import https from 'https';
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -17,7 +19,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 app.use(cors())
 // ADD THIS
-app.use(express.json());
+app.use(express.json()); 
 app.use(express.urlencoded({extended: true}));
 app.use('/uploads',express.static('uploads'));
  
@@ -42,10 +44,19 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
     console.log(error.message);
 })
 
+
+const options = {
+    key: fs.readFileSync('certificates/server.pem'),
+    cert: fs.readFileSync('certificates/cert.pem')
+  };
+
+
 //Create Port
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Serve at: http://localhost:${port}`);
-})
 
-export default app
+const server = https.createServer(options, app);
+server.listen(port, () => {
+    console.log(`Serveur Express.js en cours d'exécution en mode HTTPS sur le port ${port}`);
+  });
+
+export default server
