@@ -382,8 +382,8 @@ userRouter.post("/prerent", async (req, res) => {
     </tbody>
   </table>
   <h5>
-    Merci de cliquer ici puis sur <a href="http://localhost:3000/api/rent/rentacar/${newRent._id}">J'accepte ici la demende </a>ou
-    bien<a href="http://localhost:3000/api/rent/cancelrent/${newRent._id}"> Je refuse la demande</a> pour que le systeme envoie un
+    Merci de cliquer ici puis sur <a href="https://54.37.11.213:3000/api/rent/rentacar/${newRent._id}">J'accepte ici la demende </a>ou
+    bien<a href="https://54.37.11.213:3000/api/api/rent/cancelrent/${newRent._id}"> Je refuse la demande</a> pour que le systeme envoie un
     mail de confirmation et de demande de paiement en ligne
   </h5>
 </div>`
