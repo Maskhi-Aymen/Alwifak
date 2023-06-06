@@ -51,7 +51,7 @@ const CarAdmin = () => {
       formData.append("description", description);
 
       try {
-        const { data } = await axios.put(process.env.REACT_APP_API_URL+`/cars/car/${userId}/${singleCarItem._id}`, formData, {
+        const { data } = await axios.put(`/api/cars/car/${userId}/${singleCarItem._id}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             "Authorization": "Bearer "
@@ -89,7 +89,7 @@ const CarAdmin = () => {
     const fetchData = async () => {
 
       try {
-        const result = await axios.get(process.env.REACT_APP_API_URL+`/cars/car/${slug}`);
+        const result = await axios.get(`/api/cars/car/${slug}`);
         setSingle(result.data)
         setcarName(result.data.carName);
         setbrand(result.data.brand);
@@ -212,7 +212,6 @@ const CarAdmin = () => {
                 </div>
               </div>
               <div className="payment__info mt-5">
-                <img src="" alt="offre special" style={{ width: "140px" }} class="animate__animated animate__heartBeat animate__infinite" />
                 <h5 className="mb-4 fw-bold ">Prix :<Input defaultValue={payPerDay} onChange={(e) => setpayPerDay(e.target.value)} />  Dt/Jour</h5>
               </div>
               <div className="booking-info mt-5">

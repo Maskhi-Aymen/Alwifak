@@ -20,8 +20,9 @@ const Home = () => {
      
        
      try {
-       const result = await axios.get(process.env.REACT_APP_API_URL+`/cars/getall`);
-       setCarData(result.data)
+       const result = await axios.get(`/api/cars/getall`);
+       if(typeof(result.data)!='string'){
+       setCarData(result.data)}
      } catch(err) {
        console.log("Error!");
      }

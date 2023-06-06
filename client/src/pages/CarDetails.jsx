@@ -41,7 +41,7 @@ const CarDetails = () => {
     const fetchData = async () => {
 
       try {
-        const result = await axios.get(process.env.REACT_APP_API_URL+`/cars/car/${slug}`);
+        const result = await axios.get(`/api/cars/car/${slug}`);
         setSingle(result.data)
         setcarName(result.data.carName);
         setId(result.data._id);

@@ -31,7 +31,7 @@ export default function TableCars() {
       
         
       try {
-        const result = await axios.get(process.env.REACT_APP_API_URL+`/cars/getall`);
+        const result = await axios.get(`/api/cars/getall`);
         setCarData(result.data)
         console.log(result.data)
 
@@ -51,7 +51,7 @@ export default function TableCars() {
 
 
     try {
-      const { data } = await axios.delete(process.env.REACT_APP_API_URL+`/cars/car/${userId}/${id}`, {
+      const { data } = await axios.delete(`/api/cars/car/${userId}/${id}`, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": "Bearer "

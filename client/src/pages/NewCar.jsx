@@ -42,7 +42,7 @@ const NewCar= () => {
     formData.append("description",description);
     try {
 
-      const  data  = await axios.post(process.env.REACT_APP_API_URL+`/cars/add/${userId}`, formData, {
+      const  data  = await axios.post(`/api/cars/add/${userId}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": "Bearer "
