@@ -20,7 +20,7 @@ const Home = () => {
      
        
      try {
-       const result = await axios.get(`https://54.37.11.213:3000/api/cars/getall`);
+       const result = await axios.get(`/api/cars/getall`);
        if(typeof(result.data)!='string'){
        setCarData(result.data)}
      } catch(err) {

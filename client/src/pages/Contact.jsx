@@ -8,11 +8,11 @@ import "../styles/contact.css";
 
 const socialLinks = [
   {
-    url: "#",
+    url: "https://www.facebook.com/AlWifakRentCar",
     icon: "ri-facebook-line",
   },
   {
-    url: "#",
+    url: "https://www.instagram.com/alwifak_rent_a_car/",
     icon: "ri-instagram-line",
   },
   {
@@ -64,7 +64,7 @@ const Contact = () => {
                 </p>
                 <div className=" d-flex align-items-center gap-2">
                   <h6 className="fs-6 mb-0">Phone:</h6>
-                  <p className="section__description mb-0">+216 29 060 530</p>
+                  <p className="section__description mb-0">+216 25 214 025 / +216 29 060 530 <i class="ri-whatsapp-line"></i></p>
                 </div>
 
                 <div className=" d-flex align-items-center gap-2">
@@ -76,13 +76,10 @@ const Contact = () => {
 
                 <div className=" d-flex align-items-center gap-4 mt-3">
                   {socialLinks.map((item, index) => (
-                    <Link
-                      to={item.url}
-                      key={index}
-                      className="social__link-icon"
-                    >
+                      <a href={item.url} key={index}
+                      className="social__link-icon">
                       <i class={item.icon}></i>
-                    </Link>
+                      </a>
                   ))}
                 </div>
               </div>

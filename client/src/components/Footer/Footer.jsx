@@ -63,11 +63,11 @@ const Footer = () => {
             <div className="mb-4">
               <h5 className="footer__link-title mb-4">Siège social</h5>
               <p className="office__info"><BiMap/>18, 1001 Rue Fares El Khouri, Tunis</p>
-              <p className="office__info"><BiMobile/> +216 29 060 530</p>
+              <p className="office__info"><BiMobile/> +216 25 214 025 / +216 29 060 530 <i class="ri-whatsapp-line"></i></p>
 
               <p className="office__info"><BiEnvelope/> contact@alwifakrentacar.com</p>
 
-              <p className="office__info"><BiAlarm/> 7am - 9pm</p>
+              <p className="office__info"><BiAlarm/> 5am - 8pm</p>
             </div>
           </Col>
 
@@ -87,7 +87,7 @@ const Footer = () => {
           <Col lg="12">
             <div className="footer__bottom">
               <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
-                <i class="ri-copyright-line"></i>Copyright {year} :: Al wifak-rent a car :: www.ai-wifak.com
+                <i class="ri-copyright-line"></i>Copyright {year} :: Al wifak-rent a car :: www.alwifakrentacar.com
               </p>
             </div>
           </Col>

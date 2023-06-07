@@ -77,7 +77,7 @@ const Header = () => {
                 </span>
                 <div className="header__location-content">
                   <h4>Du Lundi au Samdi </h4>
-                  <h6>7am - 9pm</h6>
+                  <h6>8am - 5pm</h6>
                 </div>
               </div>
             </Col>
