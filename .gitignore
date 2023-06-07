@@ -1,0 +1,18 @@
+# Ignorer les fichiers compilés
+*.class
+*.o
+*.pyc
+
+# Ignorer le répertoire de dépendances
+/node_modules
+/client/node_modules
+
+# Ignorer les fichiers de configuration spécifiques à un IDE
+.vscode/
+.idea/
+
+# Ignorer les fichiers de sauvegarde temporaires
+*~
+
+# Ignorer les fichiers de logs
+/logs/

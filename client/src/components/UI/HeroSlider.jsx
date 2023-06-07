@@ -22,8 +22,8 @@ const HeroSlider = () => {
       <div className="slider__item slider__item-01 mt0">
         <Container><center>
           <div className="slider__content ">
-            <h1 className="text-light mb-3" style={{fontSize:"120px",fontFamily:"Lato, Helvetica, sans-serif"}}>Al Wifak </h1>
-            <h3 className="text-light mb-4" style={{fontFamily:"Lato, Helvetica, sans-serif"}}>Réservez dès maintenant chez Al Wifak Rent Car et bénéficiez d'une expérience de location de voiture exceptionnelle avec des options adaptées à toutes les occasions.</h3>
+            <h1 className="text-light mb-3" style={{fontSize:"120px",fontFamily:"pala, sans-serif"}}>Al Wifak </h1>
+            <h3 className="text-light mb-4" style={{fontFamily:"Lato, Helvetica, sans-serif"}}>Réservez dès maintenant chez <b style={{fontFamily:"pala, sans-serif"}}>Al Wifak</b> Rent a Car et bénéficiez d'une expérience de location de voiture exceptionnelle avec des options adaptées à toutes les occasions.</h3>
           </div></center>
         </Container>
       </div>
@@ -31,8 +31,8 @@ const HeroSlider = () => {
       <div className="slider__item slider__item-02 mt0">
         <Container><center>
           <div className="slider__content ">
-            <h1 className="text-light mb-3" style={{fontSize:"120px",fontFamily:"Lato, Helvetica, sans-serif"}}>Al Wifak</h1>
-            <h3 className="text-light mb-4" style={{fontFamily:"Lato, Helvetica, sans-serif"}}>Découvrez notre sélection de véhicules et réservez dès maintenant chez Al Wifak Rent Car pour une location longue ou courte durée</h3>
+            <h1 className="text-light mb-3" style={{fontSize:"120px",fontFamily:"pala, sans-serif"}}>Al Wifak</h1>
+            <h3 className="text-light mb-4" style={{fontFamily:"Lato, Helvetica, sans-serif"}}>Découvrez notre sélection de véhicules et réservez dès maintenant chez <b style={{fontFamily:"pala, sans-serif"}}>Al Wifak</b> Rent a  Car pour une location longue ou courte durée</h3>
           </div></center>
         </Container>
       </div>
@@ -40,8 +40,8 @@ const HeroSlider = () => {
       <div className="slider__item slider__item-03 mt0">
         <Container><center>
           <div className="slider__content ">
-                   <h1 className="text-light mb-3" style={{fontSize:"120px",fontFamily:"Lato, Helvetica, sans-serif"}}>Al Wifak</h1>     
-            <h3 className="text-light mb-4" style={{fontFamily:"Lato, Helvetica, sans-serif"}}>Voyagez avec style et confort en louant votre voiture chez Al Wifak Rent Car <br/> votre partenaire de confiance pour des locations flexibles et abordables</h3>
+                   <h1 className="text-light mb-3" style={{fontSize:"120px",fontFamily:"pala, sans-serif"}}>Al Wifak</h1>     
+            <h3 className="text-light mb-4" style={{fontFamily:"Lato, Helvetica, sans-serif"}}>Voyagez avec style et confort en louant votre voiture chez <b style={{fontFamily:"pala, sans-serif"}}>Al Wifak</b> Rent a Car <br/> votre partenaire de confiance pour des locations flexibles et abordables</h3>
           </div></center>
         </Container>
       </div>
