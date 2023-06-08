@@ -133,3 +133,29 @@ input[type=text], input[type=password] {
   font-family: 'pala';
   src: url('./assets/fonts/pala.ttf') format('truetype');
 }
+input[type="radio"] {
+  /* ...existing styles */
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.payment button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #0a466048;
+  color: #000000;
+}

@@ -10,6 +10,7 @@ import "../../styles/payment-method.css";
 
 const BookingForm = ({ carName,brand,prix ,id}) => {
 
+  const [actif, setActif] = useState(false);
   const [name, setname] = useState();
   const [lastname, setlastname] = useState();
   const [email, setemail] = useState();
@@ -21,7 +22,7 @@ const BookingForm = ({ carName,brand,prix ,id}) => {
   const [timeprise, settimeprise] = useState();
   const [timereprise, settimereprise] = useState();
   const [nombrepers, setnombrepers] = useState("1 person");
-  const [nombrebag, setnombrebag] = useState("1 Bagage");
+  const [nombrebag, setnombrebag] = useState("false");
   const [autre, setautre] = useState("");
   const [payment, setpayment] = useState();
 
@@ -36,7 +37,7 @@ const BookingForm = ({ carName,brand,prix ,id}) => {
       try {
         setisvalid(true);
         toggle();
-        await axios.post("/api/users/prerent", {
+        await axios.post("https://localhost:3000/api/users/prerent", {
           name,lastname,email,numtel,lieuprise,dateprise,timeprise,lieureprise,datereprise,timereprise,
           nombrepers,nombrebag,payment,autre,carName,brand,prix,id
         },{
@@ -105,13 +106,10 @@ const BookingForm = ({ carName,brand,prix ,id}) => {
               </select>
             </FormGroup>
             <FormGroup className="booking__form d-inline-block ms-1 mb-4">
-            <label>Nombre de bagage :</label>
+            <label>Siège bébé :</label>
               <select onChange={(e) => setnombrebag(e.target.value)} name="" id="">
-                <option value="1 Bagage" selected>1 Bagage</option>
-                <option value="2 Bagage">2 Bagage</option>
-                <option value="3 Bagage">3 Bagage</option>
-                <option value="4 Bagage">4 Bagage</option>
-                <option value="5+ Bagage">5+ Bagage</option>
+                <option value="false" selected>Non</option>
+                <option value="true">Oui</option>
               </select>
             </FormGroup>
 
@@ -153,7 +151,6 @@ const BookingForm = ({ carName,brand,prix ,id}) => {
           </div>
         </Col>
 
-
         <Col lg="12" className="mt-5" style={{ flex: 'display' }}>
           <div className="payment__info mt-5">
             <h5 className="mb-4 fw-bold ">Information de Payment </h5>
@@ -165,13 +162,13 @@ const BookingForm = ({ carName,brand,prix ,id}) => {
 
             <div className="payment mt-3">
               <label htmlFor="" className="d-flex align-items-center gap-2">
-                <input type="radio" onChange={(e) => setpayment("Chéque")} name="fav_payment" /> Paiement par chèque
+                <input type="radio" onChange={(e) => setpayment("Chéque")} name="fav_payment" /> Payement par chèque
               </label>
             </div>
 
             <div className="payment mt-3 d-flex align-items-center justify-content-between">
               <label htmlFor="" className="d-flex align-items-center gap-2">
-                <input type="radio" onChange={(e) => setpayment("Master Card")} name="fav_payment" /> Master Card
+                <input type="radio" onChange={(e) => setpayment("Master Card")} name="fav_payment" /> Payement par Master Card
               </label>
 
               <img src={masterCard} alt="" />
@@ -179,13 +176,14 @@ const BookingForm = ({ carName,brand,prix ,id}) => {
 
             <div className="payment mt-3 d-flex align-items-center justify-content-between">
               <label htmlFor="" className="d-flex align-items-center gap-2">
-                <input type="radio" onChange={(e) => setpayment("PayPal")} name="fav_payment" /> Paypal
+                <input type="radio" onChange={(e) => setpayment("Espèce")} name="fav_payment" /> Payement Espèce
               </label>
-
-              <img src={paypal} alt="" />
             </div>
             <div className="payment text-end mt-5">
-              <button onClick={submitHandler}>Réservez Maintenant</button>
+              <input type="checkbox" onClick={()=>setActif(!actif)}/>J'accepte les conditions générales
+            </div>
+            <div className="payment text-end mt-5">
+              <button disabled={!actif} onClick={submitHandler}>Réservez Maintenant</button>
             </div>
           </div>
         </Col>
